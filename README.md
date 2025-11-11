@@ -8,8 +8,9 @@
 ---
 
 ## Autores
-- **Nome Aluno 1** — RM ######
-- **Nome Aluno 2** — RM ######
+- **Guilherme Abe** - RM 554743
+- **Gustavo Paulino** - RM 554779
+- **Victor Dias** - RM 558017
 
 ---
 
