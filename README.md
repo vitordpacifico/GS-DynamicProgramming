@@ -36,7 +36,7 @@ README.md → documentação do projeto
 
 ## Análise de Desempenho (Teórica)
 
-[cite_start]Conforme solicitado no enunciado[cite: 160], segue a análise de complexidade de tempo (Notação Big O) para as quatro abordagens, onde $N$ é o número de projetos e $C$ é a capacidade máxima de horas.
+Conforme solicitado no enunciado, segue a análise de complexidade de tempo (Notação Big O) para as quatro abordagens, onde $N$ é o número de projetos e $C$ é a capacidade máxima de horas.
 
 1.  **Gulosa (Greedy):**
     * **Complexidade:** $O(N \log N)$
@@ -57,7 +57,7 @@ README.md → documentação do projeto
 * **Qual é a mais eficiente?**
     As abordagens de Programação Dinâmica (**Memoização** e **Bottom-Up**) são as mais eficientes para garantir a solução ótima, ambas com complexidade $O(N \cdot C)$. Elas evitam o recálculo redundante da solução recursiva pura (exponencial).
 
-    [cite_start]Embora a abordagem Gulosa seja mais rápida em tempo de execução ($O(N \log N)$), ela não é considerada "eficiente" para este problema, pois **não garante a solução ótima**[cite: 142, 163].
+    Embora a abordagem Gulosa seja mais rápida em tempo de execução ($O(N \log N)$), ela não é considerada "eficiente" para este problema, pois **não garante a solução ótima**.
 
 ---
 
