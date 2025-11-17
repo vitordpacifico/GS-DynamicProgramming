@@ -34,6 +34,33 @@ README.md → documentação do projeto
 
 ---
 
+## Análise de Desempenho (Teórica)
+
+[cite_start]Conforme solicitado no enunciado[cite: 160], segue a análise de complexidade de tempo (Notação Big O) para as quatro abordagens, onde $N$ é o número de projetos e $C$ é a capacidade máxima de horas.
+
+1.  **Gulosa (Greedy):**
+    * **Complexidade:** $O(N \log N)$
+    * **Justificativa:** A etapa dominante é a ordenação (sort) dos projetos pela sua razão valor/horas. Após a ordenação, a seleção é uma passagem linear $O(N)$.
+
+2.  **Recursiva Pura:**
+    * **Complexidade:** $O(2^N)$ (Exponencial)
+    * **Justificativa:** No pior caso, a função explora duas ramificações (incluir ou não incluir o projeto) para cada um dos $N$ projetos, levando a uma árvore de recursão com $2^N$ folhas.
+
+3.  **Top-Down (Memoização):**
+    * **Complexidade:** $O(N \cdot C)$ (Pseudo-polinomial)
+    * **Justificativa:** A recursão é otimizada. Cada subproblema, definido pelo estado `(i, c)` (índice do projeto e capacidade restante), é calculado apenas uma vez e armazenado. Existem $N \times C$ subproblemas distintos.
+
+4.  **Bottom-Up (Iterativa):**
+    * **Complexidade:** $O(N \cdot C)$ (Pseudo-polinomial)
+    * **Justificativa:** A solução constrói uma tabela (matriz) de tamanho $(N+1) \times (C+1)$. O preenchimento da tabela exige dois loops aninhados, um iterando pelos $N$ projetos e outro pela $C$ capacidade.
+
+* **Qual é a mais eficiente?**
+    As abordagens de Programação Dinâmica (**Memoização** e **Bottom-Up**) são as mais eficientes para garantir a solução ótima, ambas com complexidade $O(N \cdot C)$. Elas evitam o recálculo redundante da solução recursiva pura (exponencial).
+
+    [cite_start]Embora a abordagem Gulosa seja mais rápida em tempo de execução ($O(N \log N)$), ela não é considerada "eficiente" para este problema, pois **não garante a solução ótima**[cite: 142, 163].
+
+---
+
 ## Como Executar
 
 ### Pré-requisitos
@@ -41,29 +68,3 @@ README.md → documentação do projeto
 - (opcional) pytest:
   ```bash
   pip install pytest
-
-  Casos de Teste
-
----
-
-## Exemplo do enunciado (capacidade = 10h):
-- A, B, C e D com diferentes valores e horas.
-
-**Caso onde a gulosa falha:**
-
-Projeto	 Valor	Horas
-X	       40	   03
-Y	      100	   20
-Z	      100	   20
-
-Capacidade = 40h
-Gulosa → valor 140
-Ótimo (DP) → valor 200 ✅
-
-## Observações
-
-**As abordagens Top-Down e Bottom-Up sempre retornam o mesmo valor ótimo.**
-
-**A Recursiva Pura é demonstrativa (ineficiente).**
-
-**A Gulosa serve como heurística e pode falhar em alguns cenários.**
